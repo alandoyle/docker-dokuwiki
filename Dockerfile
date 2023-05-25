@@ -1,5 +1,5 @@
 #Dockerfile.
-FROM php:apache-bullseye
+FROM php:7-apache-bullseye
 
 ARG DOKUWIKI_VERSION=2023-04-04a
 ARG DEBIAN_FRONTEND="noninteractive"
