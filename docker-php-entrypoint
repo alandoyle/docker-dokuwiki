@@ -1,0 +1,43 @@
+#!/bin/bash
+#
+# docker-php-entrypoint is an updated entrypoint to handle Dokuwiki configuration.
+# 
+# Copyright (C) 2022 Alan Doyle
+#
+# https://github.com/alandoyle/docker-dokuwiki/
+#
+set -e
+
+# Create missing directories
+[ ! -d /var/www/html/conf ] && mkdir /var/www/html/conf
+[ ! -d /var/www/html/data ] && mkdir /var/www/html/data
+
+# Copy across default files
+if [ ! -f /var/www/html/conf/dokluwiki.php ] ; then
+    echo "Copying default config files"
+    cp -R /var/www/html/conf.default/* /var/www/html/conf
+    date > /var/www/html/conf/migrated
+fi
+if [ ! -f /var/www/html/data/_dummy ] ; then
+    echo "Copying default data files"
+    cp -R /var/www/html/data.default/* /var/www/html/data
+    date > /var/www/html/data/migrated
+fi
+
+if [ -f /var/www/html/conf/local.php ] ; then
+    [ -f /var/www/html/install.php ] && mv /var/www/html/install.php /var/www/html/install.disabled
+elif [ -f /var/www/html/install.disabled ] ; then
+    mv /var/www/html/install.disabled /var/www/html/install.php
+fi
+
+echo "Setting permissions"
+chown -R www-data:www-data /var/www/html/conf
+chown -R www-data:www-data /var/www/html/data
+echo "Complete"
+
+# first arg is `-f` or `--some-option`
+if [ "${1#-}" != "$1" ]; then
+        set -- apache2-foreground "$@"
+fi
+
+exec "$@"

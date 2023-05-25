@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  dokuwiki:
+   image: alandoyle/dokuwiki:latest
+   container_name: dokuwiki
+   restart: unless-stopped
+   init: true
+   ports:
+     - "8000:80/tcp"
+   volumes:
+     - ./dokuwiki/conf:/var/www/html/conf
+     - ./dokuwiki/data:/var/www/html/data
