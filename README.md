@@ -18,7 +18,7 @@ docker pull alandoyle/dokuwiki
 ## Usage
 
 ```bash
-docker run --name=kodi-headless-novnc \
+docker run --name=dokuwiki \
   -d --init \
   -v <MY_CONF_PATH>:/var/www/html/conf \
   -v <MY_DATA_PATH>:/var/www/html/data \
