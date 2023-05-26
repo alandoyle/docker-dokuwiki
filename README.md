@@ -1,4 +1,16 @@
-# alandoyle/dokuwiki
+.. SPDX-License-Identifier: GPL-3.0-or-later
+
+----
+
+.. figure:: https://upload.wikimedia.org/wikipedia/commons/9/9d/Dokuwiki_logo.svg
+   :target: https://www.dokuwiki.org/dokuwiki
+   :alt: DokuWiki
+   :width: 100%
+   :align: center
+
+----
+
+# alandoyle/dokuwiki1
 
 ![Dokuwiki](https://www.dokuwiki.org/lib/tpl/dokuwiki/images/logo.png)
 
