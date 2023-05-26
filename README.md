@@ -1,4 +1,4 @@
-# alandoyle/dokuwiki1
+# alandoyle/dokuwiki
 
 ![Dokuwiki](https://www.dokuwiki.org/lib/tpl/dokuwiki/images/logo.png)
 
