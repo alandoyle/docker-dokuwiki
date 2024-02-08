@@ -1,7 +1,7 @@
 #Dockerfile.
 FROM php:7-apache-bullseye
 
-ARG DOKUWIKI_VERSION=2023-04-04a
+ARG DOKUWIKI_VERSION=2024-02-06
 ARG DEBIAN_FRONTEND="noninteractive"
 
 VOLUME /var/www/html/conf
@@ -9,7 +9,7 @@ VOLUME /var/www/html/data
 
 RUN apt-get update -y && apt upgrade -y && apt-get install git curl -y
 RUN rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
-RUN a2enmod rewrite 
+RUN a2enmod rewrite
 RUN cd /var/www/html \
     && curl --remote-name https://download.dokuwiki.org/src/dokuwiki/dokuwiki-${DOKUWIKI_VERSION}.tgz \
     && tar -xzvf dokuwiki-${DOKUWIKI_VERSION}.tgz --strip-components=1 \
