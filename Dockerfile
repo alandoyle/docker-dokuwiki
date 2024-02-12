@@ -1,7 +1,7 @@
 #Dockerfile.
 FROM php:7-apache-bullseye
 
-ARG DOKUWIKI_VERSION=2024-02-06
+ARG DOKUWIKI_VERSION=2024-02-06a
 ARG DEBIAN_FRONTEND="noninteractive"
 
 VOLUME /var/www/html/conf
