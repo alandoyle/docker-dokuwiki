@@ -1,13 +1,13 @@
 #Dockerfile.
-FROM php:7-apache-bullseye
+FROM php:8.3-apache-bookworm
 
-ARG DOKUWIKI_VERSION=2024-02-06a
+ARG DOKUWIKI_VERSION=2024-02-06b
 ARG DEBIAN_FRONTEND="noninteractive"
 
 VOLUME /var/www/html/conf
 VOLUME /var/www/html/data
 
-RUN apt-get update -y && apt upgrade -y && apt-get install git curl -y
+RUN apt-get update -y && apt upgrade -y && apt-get install git curl dos2unix -y
 RUN rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 RUN a2enmod rewrite
 RUN cd /var/www/html \
@@ -24,6 +24,8 @@ COPY htaccess /var/www/html/.htaccess
 COPY smileys.local.conf /var/www/html/conf.default
 
 RUN chown -R www-data:www-data /var/www/
+RUN dos2unix /usr/local/bin/docker-php-entrypoint
+RUN chmod a+x /usr/local/bin/docker-php-entrypoint
 
 # HTTP
 EXPOSE 80/tcp
