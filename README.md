@@ -29,8 +29,6 @@ docker run --name=dokuwiki \
 Docker compose example:
 
 ```yaml
-version: "3"
-
 services:
   dokuwiki:
    image: alandoyle/dokuwiki:latest
