@@ -1,6 +1,13 @@
-# alandoyle/dokuwiki
+# Docker container for Dokuwiki
+[![Docker Image Size](https://img.shields.io/docker/image-size/alandoyle/dokuwiki/latest?logo=docker&style=for-the-badge)](https://hub.docker.com/r/alandoyle/dokuwiki/tags)
+[![Docker Pulls](https://img.shields.io/docker/pulls/alandoyle/dokuwiki?label=Pulls&logo=docker&style=for-the-badge)](https://hub.docker.com/r/alandoyle/dokuwiki)
+[![Source](https://img.shields.io/badge/Source-GitHub-blue?logo=github&style=for-the-badge)](https://github.com/alandoyle/docker-dokuwiki)
 
-![Dokuwiki](https://www.dokuwiki.org/lib/tpl/dokuwiki/images/logo.png)
+This is a Docker container for [Dokuwiki](https://www.dokuwiki.org/dokuwiki).
+
+---
+
+[![Dokuwiki logo](https://images.weserv.nl/?url=raw.githubusercontent.com/alandoyle/docker-dokuwiki/main/Dokuwiki-logo.png&w=110)](https://www.dokuwiki.org/dokuwiki)[![Dokuwiki](https://images.placeholders.dev/?width=256&height=110&fontFamily=monospace&fontWeight=400&fontSize=52&text=Dokuwiki&bgColor=rgba(0,0,0,0.0)&textColor=rgba(121,121,121,1))](https://www.dokuwiki.org/dokuwiki)
 
 An enhanced Dokuwiki installation with some extra features.
 
@@ -8,12 +15,16 @@ An enhanced Dokuwiki installation with some extra features.
 + [Bootstrap 3 theme](https://github.com/giterlizzi/dokuwiki-template-bootstrap3) by Giuseppe Di Terlizzi
 + Clean URLS using mod_rewrite
 
-## Docker 
+---
+
+## Docker
 
 Available on [DockerHub](https://hub.docker.com/r/alandoyle/dokuwiki)
 ```bash
 docker pull alandoyle/dokuwiki
 ```
+
+---
 
 ## Usage
 
@@ -42,11 +53,15 @@ services:
      - ./dokuwiki/data:/var/www/html/data
 ```
 
+---
+
 ### Ports
 
 | Port     | Description           |
 |----------|-----------------------|
 | `80/tcp` | HTTP                  |
+
+---
 
 ### Volumes
 
