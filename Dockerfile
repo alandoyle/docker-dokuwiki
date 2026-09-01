@@ -1,7 +1,7 @@
 #Dockerfile.
 FROM php:8.3-apache-bookworm
 
-ARG DOKUWIKI_VERSION=2025-05-14b
+ARG DOKUWIKI_VERSION=2026-07-14b
 ARG DEBIAN_FRONTEND="noninteractive"
 
 VOLUME /var/www/html/conf
